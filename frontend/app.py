@@ -1,19 +1,4 @@
-import os
-import sys
-from datetime import date
 
-# Add project root to Python path
-PROJECT_ROOT = os.path.dirname(
-    os.path.dirname(
-        os.path.abspath(__file__)
-    )
-)
-
-if PROJECT_ROOT not in sys.path:
-    sys.path.insert(0, PROJECT_ROOT)
-
-import requests
-import streamlit as st
 from dotenv import load_dotenv
 
 from utils.document_utils import (
@@ -31,7 +16,7 @@ load_dotenv()
 # Backend URL
 BACKEND_URL = os.getenv(
     "BACKEND_URL",
-    "http://127.0.0.1:8000"
+    "https://legalease-backend-d19f.onrender.com"
 )
 
 
@@ -76,7 +61,22 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+import os
+import sys
+from datetime import date
 
+# Add project root to Python path
+PROJECT_ROOT = os.path.dirname(
+    os.path.dirname(
+        os.path.abspath(__file__)
+    )
+)
+
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+import requests
+import streamlit as st
 # -----------------------------
 # HEADER
 # -----------------------------
